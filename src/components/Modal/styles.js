@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const AssinaturaDigital = styled.button`
+export const BotaoAssinaturaDigital = styled.button`
   cursor: pointer;
 
   img {
@@ -12,4 +12,8 @@ export const AssinaturaDigital = styled.button`
   &:hover {
     color: blue;
   }
+`;
+
+export const CampoAssinatura = styled.div`
+  border: 2px dashed #000;
 `;
