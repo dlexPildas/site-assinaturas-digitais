@@ -2,17 +2,17 @@ import React from "react";
 
 import { Container, Dados, Action } from "./styles";
 
-import { FaFilePdf, FaFileDownload, FaTrashAlt } from "react-icons/fa";
+import Modal from "../Modal/index";
+
+import { FaRegFilePdf, FaFileDownload, FaTrashAlt } from "react-icons/fa";
 
 export default function ListFiles({ files }) {
-  console.log(files);
-
   return (
     <Container>
       {files.map(file => (
-        <li>
+        <li key={file.lastModified}>
           <Dados>
-            <FaFilePdf size={30} />
+            <FaRegFilePdf size={30} />
             <div>
               <strong>{file.name}</strong>
               <span>{file.size}</span>
@@ -25,6 +25,7 @@ export default function ListFiles({ files }) {
             <button>
               <FaFileDownload size={25} />
             </button>
+            <Modal />
           </Action>
         </li>
       ))}

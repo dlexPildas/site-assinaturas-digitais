@@ -13,20 +13,20 @@ const dragReject = css`
 `;
 
 export const Container = styled.div.attrs({})`
-  padding: 10px;
   border: 2px dashed #aaa;
 
   ${props => props.isDragActive && dragActive}
   ${props => props.isDragReject && dragReject}
 
   div {
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
     cursor: pointer;
 
-    p {
+    span {
+      padding: 20px;
       font-weight: bold;
     }
   }

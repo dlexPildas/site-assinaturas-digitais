@@ -42,7 +42,6 @@ export default class Main extends Component {
             <h1>Assinatura digital</h1>
             <FaFilePdf size={36} />
           </Title>
-
           <DropZone message={this.message} addFile={this.handleAddFile} />
           <ListFiles files={files} />
         </Container>

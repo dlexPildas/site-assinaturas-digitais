@@ -11,7 +11,7 @@ export default function DropZone({ addFile, message }) {
         <Container isDragActive={isDragActive} isDragReject={isDragReject}>
           <div {...getRootProps()}>
             <input {...getInputProps()} />
-            <p>{message(isDragActive, isDragReject)}</p>
+            <span>{message(isDragActive, isDragReject)}</span>
           </div>
         </Container>
       )}

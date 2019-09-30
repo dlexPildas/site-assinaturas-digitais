@@ -11,10 +11,11 @@ export default createGlobalStyle`
   html, body, #root {
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
+    background: #f1f1f1;
   }
 
   body {
-    background: #f1f1f1;
+    
     -webkit-font-smoothing: antialiased !important; 
   }
 

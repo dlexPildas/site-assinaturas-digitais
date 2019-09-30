@@ -26,6 +26,10 @@ export const Dados = styled.div`
     align-items: flex-start;
     flex-direction: column;
 
+    strong {
+      font-size: 14px;
+    }
+
     span {
       font-size: 15px;
       color: #aaa;
