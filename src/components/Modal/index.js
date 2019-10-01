@@ -29,7 +29,6 @@ export default function Example({file}) {
           editPdf(data)
           
         });
-        //return response.blob();
       })
       
   }

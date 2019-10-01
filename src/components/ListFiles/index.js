@@ -19,10 +19,10 @@ export default function ListFiles({ files }) {
             </div>
           </Dados>
           <Action>
-            <button>
+            <button onClick={ () => alert('Opção não disponível :(')}>
               <FaTrashAlt size={25} />
             </button>
-            <button>
+            <button onClick={ () => alert('Opção não disponível :(')}>
               <FaFileDownload size={25} />
             </button>
             <Modal file={file} />
