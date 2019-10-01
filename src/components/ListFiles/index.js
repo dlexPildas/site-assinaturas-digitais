@@ -25,7 +25,7 @@ export default function ListFiles({ files }) {
             <button>
               <FaFileDownload size={25} />
             </button>
-            <Modal />
+            <Modal file={file} />
           </Action>
         </li>
       ))}

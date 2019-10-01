@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
+import fontkit from '@pdf-lib/fontkit';
+
 
 import ad from "../../assets/ass.png";
 
@@ -8,15 +11,48 @@ import { Button, Modal } from "react-bootstrap";
 
 import CanvasDraw from 'react-canvas-draw'
 
-export default function Example() {
+export default function Example({file}) {
   const [show, setShow] = useState(false);
+
+  let pdfEditado = null;
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   let loadableCanvas = () => {}
 
-  let assinatura = null;
+  const convertFile = () =>  {
+    fetch(file)
+      .then(function(response) {
+        let reader = response.body.getReader();
+        reader.read().then(function(data){
+          editPdf(data)
+          
+        });
+        //return response.blob();
+      })
+      
+  }
+
+  const editPdf = async file => {
+    
+    console.log(file.value);
+    
+    /* const existingPdfBytes = file.value
+    const pdfDoc = await PDFDocument.load(existingPdfBytes)
+    console.log(existingPdfBytes);
+    
+    
+    .
+    .
+    .
+    continua
+    
+
+    */
+    
+    
+  }
 
   return (
 
@@ -39,10 +75,8 @@ export default function Example() {
             brushRadius={1} 
             brushColor='#000' 
             catenary={false}
-            saveData={assinatura}
           />
           </CampoAssinatura>
-          
           
         </Modal.Body>
         <Modal.Footer>
@@ -52,10 +86,11 @@ export default function Example() {
           <Button variant="secondary" onClick={ () => loadableCanvas.clear()}>
             Limpar tela
           </Button>
-          <Button variant="primary" onClick={ () => {
-            localStorage.setItem(
-              "savedDrawing",loadableCanvas.getSaveData())
-            }
+          <Button variant="primary" onClick={ () => convertFile()
+          // {
+          //   localStorage.setItem(
+          //     "savedDrawing",loadableCanvas.getSaveData())
+          //   }
           }>
             Assinar
           </Button>
